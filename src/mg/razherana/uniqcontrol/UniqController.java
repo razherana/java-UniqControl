@@ -374,15 +374,6 @@ abstract public class UniqController extends HttpServlet {
       throws ServletException, IOException {
     var uri = req.getRequestURI().substring(req.getContextPath().length(), req.getRequestURI().length());
 
-    String realPath = getServletContext().getRealPath(uri);
-
-    System.out.println("Path = " + uri);
-    System.out.println("PathFile = " + realPath);
-
-    if (realPath != null && new File(realPath).exists()) {
-      return;
-    }
-
     uri = uri.replaceAll("^/|/$", "");
 
     String[] splittedUri = uri.split("/");
@@ -407,6 +398,7 @@ abstract public class UniqController extends HttpServlet {
     // We add global vars here
     globalRequest = arg0;
     globalResponse = arg1;
+    System.out.println("[INFO] -> Used controller " + getClass().getName() + ", choosing the route...");
     var routeHelper = new RouteHelper(arg0, arg1);
     attribute("routeHelper", routeHelper);
 
