@@ -1,4 +1,3 @@
-// Source code is decompiled from a .class file using FernFlower decompiler.
 package mg.razherana.uniqcontrol;
 
 import jakarta.servlet.ServletException;
