@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import mg.razherana.uniqcontrol.annotations.PathParameter;
 
-import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
@@ -301,6 +300,14 @@ abstract public class UniqController extends HttpServlet {
 
   final protected String[] parameters(String name) {
     return globalRequest.getParameterValues(name);
+  }
+
+  final protected HttpServletRequest request() {
+    return globalRequest;
+  }
+
+  final protected HttpServletResponse response() {
+    return globalResponse;
   }
 
   @Override
