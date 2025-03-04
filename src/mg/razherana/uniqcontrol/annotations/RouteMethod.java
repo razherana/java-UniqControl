@@ -8,5 +8,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface RouteMethod {
-  String value() default "";
+    String value() default "";
+
+    /**
+     * The syntax is {"method:/path/web"}
+     */
+    String[] routes() default {};
 }
