@@ -149,7 +149,6 @@ abstract public class UniqController extends HttpServlet {
                                     methodParameters.get(i).getType());
                         }
 
-                        args[i] = value;
                         parameterIndex++;
                         break;
                     case REQUEST:
